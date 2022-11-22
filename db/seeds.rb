@@ -18,7 +18,6 @@ Butler.destroy_all
   butler.category = %w[cleaning, cooking, fun, relationship, talks].sample
   butler.description = Faker::Quote.famous_last_words
   butler.price = (80..200).to_a.sample
-  butler.rating = (1...5).to_a.sample
 
   butler.save
 end
