@@ -1,12 +1,24 @@
-<% @butlers.each do |b| %>
-<ul>
-  <%= link_to butler_path(b) do %>
-    <%= image_tag(b.url) %>
-  <% end %>
-    <li><%= b.first_name%> <%= b.last_name%></li>
-            <li>created: <%= b.created_at.strftime('%d-%m-%Y')%></li>
-        <%# <li>Rates: <%= b.rating%></li>
-    <li><%= b.gender%></li>
-    <li>€ <%= b.price%> per day</li>
-</ul>
-<% end%>
+<div class="container">
+  <div class="cards">
+    <% @butlers.each do |b| %>
+      <%= link_to butler_path(b) do %>
+        <div class="card">
+            <%= image_tag(b.url) %>
+            <div class="card-content">
+              <div class="description">
+                <div class="text">
+                  <h2><%= b.first_name%> <%= b.last_name%></h2>
+                  <p>created: <%= b.created_at.strftime('%d-%m-%Y')%></p>
+                  <p><%= b.gender%></p>
+                </div>
+                <div class="price">
+                  <p>€ <%= b.price%> per day</p>
+                </div>
+              </div>
+              <h2 class="card-rating">*****</h2>
+            </div>
+          </div>
+      <% end %>
+    <% end%>
+  </div>
+</div>
