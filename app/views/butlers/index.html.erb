@@ -1,0 +1,12 @@
+<% @butlers.each do |b| %>
+<ul>
+  <%= link_to butler_path(b) do %>
+    <%= image_tag(b.url) %>
+  <% end %>
+    <li><%= b.first_name%> <%= b.last_name%></li>
+            <li>created: <%= b.created_at.strftime('%d-%m-%Y')%></li>
+        <%# <li>Rates: <%= b.rating%></li>
+    <li><%= b.gender%></li>
+    <li>€ <%= b.price%> per day</li>
+</ul>
+<% end%>
