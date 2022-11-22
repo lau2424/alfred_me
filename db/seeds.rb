@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+Butler.destroy_all
+
+40.times do |i|
+  butler = Butler.new
+  butler.gender = %w[male, female].sample
+
+  if butler.gender == "female"
+    butler.first_name = Faker::Name.female_first_name
+    butler.url = "https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg"
+  else
+    butler.url = "https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg"
+    butler.first_name = Faker::Name.male_first_name
+  end
+  butler.last_name = Faker::Name.last_name
+  butler.email = "#{butler.first_name}.#{butler.last_name}@gmail.Com"
+  butler.address = Faker::Address.state
+  butler.category = %w[cleaning, cooking, fun, relationship, talks].sample
+  butler.description = Faker::Quote.famous_last_words
+  butler.price = (80..200).to_a.sample
+  butler.rating = (1...5).to_a.sample
+
+  butler.save
+end
