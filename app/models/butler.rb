@@ -1,0 +1,2 @@
+class Butler < ApplicationRecord
+end
