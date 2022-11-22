@@ -3,7 +3,7 @@ Butler.destroy_all
 
 40.times do |i|
   butler = Butler.new
-  butler.gender = %w[male, female].sample
+  butler.gender = %w[male female].sample 
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
