@@ -1,0 +1,15 @@
+<%= simple_form_for(@butler) do |f| %>
+  <!-- [...] -->
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :address %>
+  <%= f.input :category %>
+  <%= f.label :gender %>
+  <%= f.select(:gender, ['male', 'female'], {}, {:class => 'form-control'}) %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+
+  <!-- [...] -->
+<% end %>

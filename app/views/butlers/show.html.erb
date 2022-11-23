@@ -2,12 +2,15 @@
 <div class="show-page">
   <div class="box-show">
     <div class="parent-top">
-      <div class="divtop1"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-      <div class="divtop2"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-      <div class="divtop3"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-      <div class="divtop4"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-      <div class="divtop5"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+      <div class="divtop1"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
+      <div class="divtop2"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
+      <div class="divtop3"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
+      <div class="divtop4"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
+      <div class="divtop5"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
     </div>
+
+
+<%= cl_image_tag @butler.photo.key, width: 400, height: 300, crop: :fill %>
 
     <div class="parent-bottom">
       <div class="divbottom1">
@@ -24,7 +27,7 @@
       </div>
       <div class="divbottom3">
         <%# <%=@butler.rating%>
-        <%= image_tag(@butler.url, :alt => "I love you fabrice") %>
+        <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %>
       </div>
     </div>
   </div>

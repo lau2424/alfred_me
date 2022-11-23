@@ -1,9 +1,10 @@
 class ButlersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @butlers = Butler.all
   end
+
   def show
     @butler = Butler.find(params[:id])
   end
@@ -13,9 +14,9 @@ class ButlersController < ApplicationController
   end
 
   def create
-    @butler = Restaurant.new(butler_params)
+    @butler = Butler.new(butler_params)
     if @butler.save
-      #redirect_to ******_path(@butler)
+      redirect_to butlers_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,6 +31,6 @@ class ButlersController < ApplicationController
   private
 
   def butler_params
-    params.require(:butler).permit(:first_name, :last_name, :address, :category, :gender, :description, :price, :url)
+    params.require(:butler).permit(:first_name, :last_name, :address, :category, :gender, :description, :price, :url, :photo)
   end
 end
