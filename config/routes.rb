@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  root to: "butlers#index"
   devise_for :users
-  root to: "pages#home"
-  resources :butlers
+  resources :butlers do
+    resources :bookings
+  end
 end
