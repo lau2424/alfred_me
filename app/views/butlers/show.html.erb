@@ -15,4 +15,4 @@
 <br>State: <%=@butler.address%>
 <br>€ <%=@butler.price%>
 <br>
-<%= link_to "BOOK ME", new_butler_booking_path(current_user), class: "btn btn-primary" %>
+<%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "btn btn-primary" %>
