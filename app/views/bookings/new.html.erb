@@ -1,7 +1,11 @@
-<h2>Create a booking</h2>
+<div class="contenaire">
+  <div class="form-page-back-end">
+    <h2>Create a booking</h2>
 
-<%= simple_form_for [@butler, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Submit booking", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [@butler, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Submit booking", class: "nav-btn"%>
+    <% end %>
+  </div>
+</div>
