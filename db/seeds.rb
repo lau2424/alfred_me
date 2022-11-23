@@ -1,4 +1,5 @@
 require 'faker'
+require 'open-uri'
 Butler.destroy_all
 
 40.times do |i|
@@ -7,10 +8,12 @@ Butler.destroy_all
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
-    butler.url = "https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg"
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg")
+    butler.photo.attach(io: file, filename: "female.png", content_type: "image/png")
   else
-    butler.url = "https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg"
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg")
     butler.first_name = Faker::Name.male_first_name
+    butler.photo.attach(io: file, filename: "male.png", content_type: "image/png")
   end
   butler.last_name = Faker::Name.last_name
   butler.email = "#{butler.first_name}.#{butler.last_name}@gmail.Com"

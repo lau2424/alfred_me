@@ -4,7 +4,11 @@
     <% @butlers.each do |b| %>
       <%= link_to butler_path(b) do %>
         <div class="card">
-            <%= image_tag(b.url) %>
+          <% if b.photo.attached?%>
+            <%=cl_image_tag b.photo.key%>
+          <% else %>
+            <%= image_tag(b.url)  %>
+          <% end %>
              <div class="card-content">
               <div class="description">
                 <div class="text">
