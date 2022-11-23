@@ -3,7 +3,7 @@ Butler.destroy_all
 
 40.times do |i|
   butler = Butler.new
-  butler.gender = %w[male female].sample 
+  butler.gender = %w[male female].sample
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
@@ -15,7 +15,7 @@ Butler.destroy_all
   butler.last_name = Faker::Name.last_name
   butler.email = "#{butler.first_name}.#{butler.last_name}@gmail.Com"
   butler.address = Faker::Address.state
-  butler.category = %w[cleaning, cooking, fun, relationship, talks].sample
+  butler.category = %w[cleaning cooking fun relationship talks].sample
   butler.description = Faker::Quote.famous_last_words
   butler.price = (80..200).to_a.sample
 
