@@ -9,7 +9,8 @@
       <div class="divtop5"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
     </div>
 
-    <%# <%= link_to "BOOK ME", new_butler_booking_path(current_user), class: "btn btn-primary" %>
+
+    <%# <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "btn btn-primary" %>
     <div class="parent-bottom">
       <div class="divbottom1">
           <h2><%= @butler.first_name%> <%= @butler.last_name%> </h2>
