@@ -1,18 +1,32 @@
-<div class="parent">
-<div class="div1"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-<div class="div2"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-<div class="div3"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-<div class="div4"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-<div class="div5"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
-</div>
+<%= render "partials/navbar" %>
+<div class="show-page">
+  <div class="box-show">
+    <div class="parent-top">
+      <div class="divtop1"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+      <div class="divtop2"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+      <div class="divtop3"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+      <div class="divtop4"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+      <div class="divtop5"> <%= image_tag(@butler.url, :alt => "I love you fabrice") %> </div>
+    </div>
 
-<%# #EFFACER LE "BR" AVANT %>
-<br>Name: <%= @butler.first_name%> <%= @butler.last_name%>
-<%# <br>Rating: <%=@butler.rating%>
-<br>category: <%=@butler.category%>
-<br>Gender: <%= @butler.gender%>
-<br>Description: <%=@butler.description%>
-<br>State: <%=@butler.address%>
-<br>€ <%=@butler.price%>
-<br>
-<%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "btn btn-primary" %>
+
+    <%# <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "btn btn-primary" %>
+    <div class="parent-bottom">
+      <div class="divbottom1">
+          <h2><%= @butler.first_name%> <%= @butler.last_name%> </h2>
+        <ul>
+          <li><i class="fa-solid fa-kitchen-set"></i><%=@butler.category%></li>
+          <li><i class="fa-solid fa-venus-mars"></i><%=@butler.gender%></li>
+          <li><i class="fa-solid fa-location-dot"></i><%=@butler.address%></li>
+        </ul>
+      </div>
+      <div class="divbottom2">
+        € <%=@butler.price%>
+      </div>
+      <div class="divbottom3">
+        <%# <%=@butler.rating%>
+        <%= image_tag(@butler.url, :alt => "I love you fabrice") %>
+      </div>
+    </div>
+  </div>
+</div>
