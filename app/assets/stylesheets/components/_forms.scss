@@ -35,7 +35,22 @@
   transform: translate(-50%, -50%);
   width: 400px;
   backdrop-filter: blur(50px);
+}
 
+.form-page-back-end {
+  border: 1px #93a0ec41 solid;
+  background-color: white;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 30px #ccc;
+  box-shadow: 0 0 3px #ccc;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
 }
 
 
