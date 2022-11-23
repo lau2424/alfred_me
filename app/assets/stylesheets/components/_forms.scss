@@ -1,5 +1,5 @@
 .contenaire {
-padding-top: 100px;
+  padding-top: 100px;
   &::before {
     content: '';
     position: fixed;
@@ -44,7 +44,7 @@ padding-top: 100px;
   height: 100%;
 }
 
-.form-box input {
+#button {
   border-radius: 10px;
   box-shadow: 0px 2px 2px 0px #93a0ec41;
 }
