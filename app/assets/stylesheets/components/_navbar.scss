@@ -12,11 +12,28 @@
   align-items: center;
   z-index: 1;
 }
-.navbar .logo {
+
+.search input {
+  margin-right: 20px;
+}
+
+.nav-btn {
+  background-color: #0275D8;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  box-shadow: 0 0 3px #ccc;
+
+  &:hover {
+    background-color: #0274d877;
+  }
+}
+.logo {
   display: flex;
   justify-content: center;
-}
-.navbar > .logo > img {
   height: 50px;
   object-fit: fill;
 }
