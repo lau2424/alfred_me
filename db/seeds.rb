@@ -1,7 +1,7 @@
 require 'faker'
 require 'open-uri'
-Butler.destroy_all
 Booking.destroy_all
+Butler.destroy_all
 
 40.times do |i|
   butler = Butler.new
@@ -9,12 +9,12 @@ Booking.destroy_all
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
-    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpeg")
-    butler.photo.attach(io: file, filename: "female.jpeg", content_type: "image/jpeg")
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg")
+    butler.photo.attach(io: file, filename: "female.jpg", content_type: "image/jpg")
   else
-    file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpeg")
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg")
     butler.first_name = Faker::Name.male_first_name
-    butler.photo.attach(io: file, filename: "male.jpeg", content_type: "image/jpeg")
+    butler.photo.attach(io: file, filename: "male.jpg", content_type: "image/jpg")
   end
   butler.last_name = Faker::Name.last_name
   butler.email = "#{butler.first_name}.#{butler.last_name}@gmail.Com"
