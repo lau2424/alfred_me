@@ -7,10 +7,10 @@
 <%= form_with url: butlers_path, method: :get, class: "search" do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control reduction",
           placeholder: "Find a butler"
         %>
-        <%= submit_tag "Search", class: "nav-btn" %>
+        <%= submit_tag "Search", class: "nav-btn noborder" %>
       <% end %>
 
   <div class="navbar-droite">

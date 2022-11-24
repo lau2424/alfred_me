@@ -7,10 +7,20 @@
   left: 0px;
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-between;
   background-color: white;
   align-items: center;
   z-index: 1;
+}
+
+.reduction {
+width: 50%;
+}
+
+.noborder {
+  border: none
+
 }
 
 .navbar-droite {
