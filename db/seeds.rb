@@ -9,7 +9,7 @@ Butler.destroy_all
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
-    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg")
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/2.jpg")
     butler.photo.attach(io: file, filename: "female.jpg", content_type: "image/jpg")
   else
     file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg")
