@@ -6,15 +6,15 @@
         <div class="divtopleft">
             <h2><%= @butler.first_name%> <%= @butler.last_name%> </h2>
           <ul>
-            <li><i class="fa-solid fa-kitchen-set"></i><%=@butler.category.capitalize%></li>
-            <li><i class="fa-solid fa-venus-mars"></i><%=@butler.gender.capitalize%></li>
-            <li><i class="fa-solid fa-location-dot"></i><%=@butler.address.capitalize%></li>
-            <li>€ <%=@butler.price%> / Day</li>
+            <li><%=@butler.category.capitalize%> <i class="fa-solid fa-kitchen-set"></i></li>
+            <li><%=@butler.gender.capitalize%> <i class="fa-solid fa-venus-mars"></i></li>
+            <li><%=@butler.address.capitalize%> <i class="fa-solid fa-location-dot"></i></li>
+            <li><%=@butler.price%> <i class="fa-solid fa-euro-sign"></i></li>
           </ul>
-            <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "show-btn"%>
+            <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%>
         </div>
         <div class="divdescription">
-        <p> <%= @butler.description %> </p>
+        <p> <i class="fa-solid fa-quote-left"> </i> <%= @butler.description %> <i class="fa-solid fa-quote-right"> </i></p>
         </div>
         <div class="divreview">
         REVIEWS
