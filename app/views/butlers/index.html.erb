@@ -20,7 +20,7 @@
                   <p>€ <%= b.price%> per day</p>
                 </div>
               </div>
-              <h2 class="card-rating">*****</h2>
+              <h2 class="card-rating"><%= "★" * (1..5).to_a.sample %></h2>
             </div>
           </div>
       <% end %>

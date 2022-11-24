@@ -2,7 +2,12 @@ class ButlersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @butlers = Butler.all
+    if params[:query].present?
+      sql_query = "address ILIKE :query OR category ILIKE :query"
+      @butlers = Butler.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @butlers = Butler.all
+    end
   end
 
   def show
