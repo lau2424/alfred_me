@@ -9,12 +9,12 @@ Booking.destroy_all
 
   if butler.gender == "female"
     butler.first_name = Faker::Name.female_first_name
-    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpg")
-    butler.photo.attach(io: file, filename: "female.jpg", content_type: "image/jpg")
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/female/#{i}.jpeg")
+    butler.photo.attach(io: file, filename: "female.jpeg", content_type: "image/jpeg")
   else
-    file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpg")
+    file = URI.open("https://xsgames.co/randomusers/assets/avatars/male/#{i}.jpeg")
     butler.first_name = Faker::Name.male_first_name
-    butler.photo.attach(io: file, filename: "male.jpg", content_type: "image/jpg")
+    butler.photo.attach(io: file, filename: "male.jpeg", content_type: "image/jpeg")
   end
   butler.last_name = Faker::Name.last_name
   butler.email = "#{butler.first_name}.#{butler.last_name}@gmail.Com"
@@ -25,4 +25,3 @@ Booking.destroy_all
 
   butler.save
 end
-  
