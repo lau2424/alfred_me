@@ -37,7 +37,29 @@
   backdrop-filter: blur(50px);
 }
 
-.form-page-back-end {
+.parent {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: auto;
+  justify-items: center;
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 150px;
+    height: 100px;
+  }
+  .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 150px;
+    height: 100px;
+  }
+}
+
+
+.form-page-booking {
   border: 1px #93a0ec41 solid;
   background-color: white;
   border-radius: 10px;
@@ -52,7 +74,8 @@
   transform: translate(-50%, -50%);
   width: 750px;
 }
-.form-page-back-end {
+
+.form-page-butler-new {
   border: 1px #93a0ec41 solid;
   background-color: white;
   border-radius: 10px;
@@ -65,9 +88,9 @@
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  width: 770px;
+  width: 750px;
+  height: 80%;
 }
-
 
 .form-box {
   width: 100%;
