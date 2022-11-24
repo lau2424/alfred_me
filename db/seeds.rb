@@ -1,6 +1,7 @@
 require 'faker'
 require 'open-uri'
 Butler.destroy_all
+Booking.destroy_all
 
 40.times do |i|
   butler = Butler.new
