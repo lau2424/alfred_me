@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="navbarus">
+ <div class="navbarus">
   <div class="logo">
   <%= image_tag("butler.png") %>
-  <h1 class="butlerMe">AlfredMe_</h1>
+    <h1 class="butlerMe">AlfredMe_ </h1>
   </div>
 <%= form_with url: butlers_path, method: :get, class: "search" do %>
         <%= text_field_tag :query,
@@ -16,12 +16,12 @@
   <div class="navbar-droite">
     <% if user_signed_in? %>
     <li class="nav-item active">
-      <%= link_to "Home", "#", class: "nav-btn" %>
+      <%= link_to "Home", root_path, class: "nav-btn" %>
     </li>
     <li class="nav-item dropdown">
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "Become butler", new_butler_path(), class: "dropdown-item" %>
+      <%= link_to "Become a butler", new_butler_path(), class: "dropdown-item" %>
       <%= link_to "Log out", destroy_user_session_path(), class: "dropdown-item", data: {turbo_method: :delete} %>
 
     </div>
