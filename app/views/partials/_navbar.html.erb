@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="navbar"  id="stickyheaders">
-      <div class="logo">
-      <%= image_tag("butler.png") %>
-        <h1 class="butlerMe">AlfredMe_</h1>
-      </div>
-      <%= form_with url: butlers_path, method: :get, class: "search" do %>
+    <div class="navbarus">
+  <div class="logo">
+  <%= image_tag("butler.png") %>
+  <h1 class="butlerMe">AlfredMe_</h1>
+  </div>
+<%= form_with url: butlers_path, method: :get, class: "search" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -12,44 +12,26 @@
         %>
         <%= submit_tag "Search", class: "nav-btn" %>
       <% end %>
-      <div class="login">
-        <%= link_to "Login / Sign In", new_user_session_path(@user), class: "nav-btn"%>
-      </div>
+
+  <div class="navbar-droite">
+    <% if user_signed_in? %>
+    <li class="nav-item active">
+      <%= link_to "Home", "#", class: "nav-btn" %>
+    </li>
+    <li class="nav-item dropdown">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <%= link_to "Become butler", new_butler_path(), class: "dropdown-item" %>
+      <%= link_to "Log out", destroy_user_session_path(), class: "dropdown-item", data: {turbo_method: :delete} %>
+
     </div>
+    </li>
+      <% else %>
+    <li class="login">
+      <%= link_to "Login", new_user_session_path(@user), class: "nav-btn" %>
+    </li>
+      <% end %>
+    </ul>
   </div>
 
-<%# To check out if time left on scrolling action %>
 
-<%# <script>
-document.addEventListener(‘DOMContentLoaded’, function() {
-jQuery(function($) {
-var mywindow = $(window);
-var mypos = mywindow.scrollTop();
-let scrolling = false; /* For throlling scroll event */
-window.addEventListener(‘scroll’, function() {
-scrolling = true;
-});
-setInterval(() => {
-if (scrolling) {
-scrolling = false;
-if (mypos > 40) {
-if (mywindow.scrollTop() > mypos) {
-$(‘#stickyheaders’).addClass(‘headerup’);
-} else {
-$(‘#stickyheaders’).removeClass(‘headerup’);
-}
-}
-mypos = mywindow.scrollTop();
-}
-}, 300);
-});
-});
-</script>
-<style>
-#stickyheaders{
-transition : transform 0.4s ease;
-}
-.headerup{
-transform: translateY(-117px); /*rediger denne værdi til højden af headeren, således headeren bliver skubbet helt væk*/
-}
-</style> %>

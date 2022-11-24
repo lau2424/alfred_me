@@ -1,34 +1,24 @@
 <%= render "partials/navbar" %>
 <div class="show-page">
   <div class="box-show">
-    <div class="parent-top">
-      <div class="divtop1"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
-      <div class="divtop2"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
-      <div class="divtop3"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
-      <div class="divtop4"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
-      <div class="divtop5"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
-    </div>
-
-
-<%= cl_image_tag @butler.photo.key, width: 400, height: 300, crop: :fill %>
-
-    <div class="parent-bottom">
-      <div class="divbottom1">
-          <h2><%= @butler.first_name%> <%= @butler.last_name%> </h2>
-        <ul>
-          <li><i class="fa-solid fa-kitchen-set"></i><%=@butler.category%></li>
-          <li><i class="fa-solid fa-venus-mars"></i><%=@butler.gender%></li>
-          <li><i class="fa-solid fa-location-dot"></i><%=@butler.address%></li>
-          <li>€ <%=@butler.price%></li>
-        </ul>
-      </div>
-      <div class="divbottom2">
-         <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "show-btn"%>
-      </div>
-      <div class="divbottom3">
-        <%# <%=@butler.rating%>
-        <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %>
-      </div>
+    <div class="parent">
+      <div class="divtopright"> <%= cl_image_tag(@butler.photo.key, :alt => "I love you fabrice") %> </div>
+        <div class="divtopleft">
+            <h2><%= @butler.first_name%> <%= @butler.last_name%> </h2>
+          <ul>
+            <li><i class="fa-solid fa-kitchen-set"></i><%=@butler.category%></li>
+            <li><i class="fa-solid fa-venus-mars"></i><%=@butler.gender%></li>
+            <li><i class="fa-solid fa-location-dot"></i><%=@butler.address%></li>
+            <li>€ <%=@butler.price%></li>
+          </ul>
+            <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "show-btn"%>
+        </div>
+        <div class="divdescription">
+        DESCRIPTION
+        </div>
+        <div class="divreview">
+        REVIEWS
+        </div>
     </div>
   </div>
 </div>

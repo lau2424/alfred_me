@@ -1,4 +1,4 @@
-.navbar {
+.navbarus {
   margin: 0;
   width: 100%;
   height: 100px;
@@ -13,8 +13,22 @@
   z-index: 1;
 }
 
+.navbar-droite {
+  li {
+    display: inline;
+    list-style: none;
+    padding-right: 5px;
+  }
+  margin-right: 5%;
+  img {
+    cursor: pointer;
+  }
+}
+
 .search input {
   margin-right: 20px;
+  display: inline;
+  
 }
 
 
@@ -38,6 +52,7 @@
   justify-content: center;
   height: 50px;
   object-fit: fill;
+  margin-left: 5%;
 }
 .navbar form {
   display: flex;
