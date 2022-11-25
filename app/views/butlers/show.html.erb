@@ -18,7 +18,8 @@
         </div>
         <div class="divreview">
     <% if user_signed_in? %>
-        <%= link_to "ADD REVIEW", new_butler_reviewtable_path(@butler) %>
+        <%# <%= link_to "ADD REVIEW", new_butler_reviewtable_path(@butler) %>
+              <%= render "reviewtables/formreviews", butler: @butler, review: @review %>
         <% else %>
       <%= link_to "Login to add review", new_user_session_path(@user) %>
         <% end %>
