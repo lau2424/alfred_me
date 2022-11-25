@@ -50,57 +50,56 @@
   object-fit: cover;
   border-radius: 10px;
 }
-  // .divtopleft{
-  //   width: 100%;
-  //   grid-area: 1 / 1 / 2 / 2;
-  //   text-align: right;
 
 
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
 
-  //   li {
-  //     list-style-type: none;
-  //     text-align: right;
+.divtopleft ul{
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+}
+.button{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
 
-  //   }
-
-  //   .fa-solid {
-  //     margin-right: 15px;
-  //   }
-
-  //   input {
-  //     align-self: end;
-  //   }
-  // }
-
-  // .divtopright {
-  //   grid-area: 1 / 2 / 2 / 3;
-  //   width: 40%;
-  //   justify-self: stretch;
-
-  //   img {
-  //     width: auto;
-  //     height: 100%;
-  //   }
-  // }
-
-
-  .divdescription {
-    font-family: 'Handlee', cursive;
-    font-size: 25px;
-    padding: 10px;
+@media (max-width: 768px) {
+  .divreview form {
     text-align: center;
   }
 
-  .divreview {
+  .divtopleft ul{
+    text-align: center;
+  }
+
+  .divtopleft {
+    text-align: center;
+  }
+}
+
+
+.divtopright img{
     width: 100%;
-    text-align: center;
-  }
+    object-fit: cover;
+    border-radius: 10px;
+}
 
+.divdescription {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2em;
+}
 
-  .divreview ul {
-    margin-top: 50px;
-    list-style-type: none;
-    font-family: 'Handlee', cursive;
-    font-size: 25px;
-    padding: 0;
-  }
+.divreview ul {
+  margin-top: 20px;
+  text-align: center;
+  list-style-type: none;
+  font-size: 1.5em;
+}
