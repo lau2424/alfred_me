@@ -12,6 +12,7 @@ class ButlersController < ApplicationController
 
   def show
     @butler = Butler.find(params[:id])
+    @review = Reviewtable.new
   end
 
   def new

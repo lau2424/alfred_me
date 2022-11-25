@@ -1,6 +1,7 @@
 class Butler < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
+  has_many :reviewtables
 
   has_one_attached :photo
 

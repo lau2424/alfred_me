@@ -1,0 +1,7 @@
+<h1>New review</h1>
+  <%= simple_form_for [@butler, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.label :rating %>
+    <%= f.select(:rating, [0,1,2,3,4,5], {}, {:class => 'form-control'})%>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end >
