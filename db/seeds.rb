@@ -1,5 +1,6 @@
 require 'faker'
 require 'open-uri'
+Reviewtable.destroy_all
 Booking.destroy_all
 Butler.destroy_all
 
