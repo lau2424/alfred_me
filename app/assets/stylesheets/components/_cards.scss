@@ -14,8 +14,12 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-
+  transition: all .3s ease-in-out; /* Animation */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+    // z-index: 999;
+  }
 }
 
 .card > img {
