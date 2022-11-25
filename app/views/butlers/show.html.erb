@@ -11,7 +11,7 @@
             <li><%=@butler.address.capitalize%> <i class="fa-solid fa-location-dot"></i></li>
             <li><%=@butler.price%> <i class="fa-solid fa-euro-sign"></i></li>
           </ul>
-            <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%>
+            <div class="button"><%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%></div>
         </div>
     </div>
 
@@ -32,6 +32,7 @@
               <% end %>
               </ul>
           </div>
+
 
         </div>
   </div>

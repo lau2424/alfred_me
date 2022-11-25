@@ -1,6 +1,4 @@
 .box-show {
-  padding: 30px;
-  height: auto;
   margin: 200px auto 0;
   display: flex;
   flex-direction: column;
@@ -71,13 +69,15 @@
 }
 
 @media (max-width: 768px) {
-  .divreview form {
-    text-align: center;
-  }
-
   .divtopleft ul{
     text-align: center;
   }
+
+  .divtopleft {
+    text-align: center;
+  }
+}
+
 
   .divtopleft {
     text-align: center;
@@ -103,3 +103,4 @@
   list-style-type: none;
   font-size: 1.5em;
 }
+
