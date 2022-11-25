@@ -13,22 +13,24 @@
           </ul>
             <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%>
         </div>
-        <div class="divdescription">
-        <p> <i class="fa-solid fa-quote-left"> </i> <%= @butler.description %> <i class="fa-solid fa-quote-right"> </i></p>
-        </div>
-        <div class="divreview">
-    <% if user_signed_in? %>
-        <%# <%= link_to "ADD REVIEW", new_butler_reviewtable_path(@butler) %>
-              <%= render "reviewtables/formreviews", butler: @butler, review: @review %>
-        <% else %>
-      <%= link_to "Login to add review", new_user_session_path(@user) %>
-        <% end %>
-        <ul>
-        <% @butler.reviewtables.each do |e| %>
-        <li><%= e.content %> - <%= e.rating %> by <%= e.user.first_name %></li>
-        <% end %>
-        </ul>
-        </div>
     </div>
+        <div class="bottom-section">
+          <div class="divdescription">
+            <p> <i class="fa-solid fa-quote-left"> </i> <%= @butler.description %> <i class="fa-solid fa-quote-right"> </i></p>
+          </div>
+          <div class="divreview">
+            <% if user_signed_in? %>
+            <%# <%= link_to "ADD REVIEW", new_butler_reviewtable_path(@butler) %>
+                <%= render "reviewtables/formreviews", butler: @butler, review: @review %>
+              <% else %>
+            <%= link_to "Login to add review", new_user_session_path(@user) %>
+              <% end %>
+              <ul>
+              <% @butler.reviewtables.each do |e| %>
+              <li><%= e.content %> - <%= e.rating %> by <%= e.user.first_name %></li>
+              <% end %>
+              </ul>
+          </div>
+        </div>
   </div>
 </div>
