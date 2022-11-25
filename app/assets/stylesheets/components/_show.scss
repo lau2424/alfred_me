@@ -86,6 +86,7 @@
 
 .divtopright img{
     width: 100%;
+    max-width: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -101,4 +102,5 @@
   text-align: center;
   list-style-type: none;
   font-size: 1.5em;
+  padding-left: 0;
 }
