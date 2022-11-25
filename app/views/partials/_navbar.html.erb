@@ -1,40 +1,45 @@
 <div class="container">
  <div class="navbarus">
-  <div class="logo">
-  <%= image_tag("butler.png") %>
-    <h1 class="butlerMe">AlfredMe_ </h1>
-  </div>
-<%= form_with url: butlers_path, method: :get, class: "search" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control reduction",
-          placeholder: "Find a butler"
-        %>
-        <%= submit_tag "Search", class: "nav-btn noborder" %>
-      <% end %>
-
-  <div class="navbar-droite">
-    <% if user_signed_in? %>
-    <li class="nav-item active">
-      <%= link_to "Home", root_path, class: "nav-btn" %>
-    </li>
-    <li class="nav-item dropdown">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else %>
-        <%= image_tag "https://www.shutterstock.com/image-vector/default-avatar-profile-icon-grey-600w-1545687101.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "Become a butler", new_butler_path(), class: "dropdown-item" %>
-      <%= link_to "Log out", destroy_user_session_path(), class: "dropdown-item", data: {turbo_method: :delete} %>
-
+  <div class="logo-container">
+    <div class="logo">
+    <%= image_tag("butler.png") %>
+      <h1 class="butlerMe">AlfredMe_ </h1>
     </div>
-    </li>
-      <% else %>
-    <li class="login">
-      <%= link_to "Login", new_user_session_path(@user), class: "nav-btn" %>
-    </li>
-      <% end %>
-    </ul>
   </div>
+      <div class="search-home">
+        <div class="navbar-gauche">
+          <%= form_with url: butlers_path, method: :get, class: "search" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control reduction",
+              placeholder: "Find a butler"
+            %>
+            <%= submit_tag "Search", class: "nav-btn noborder" %>
+          <% end %>
+        </div>
+
+            <div class="navbar-droite">
+        <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", root_path, class: "nav-btn" %>
+        </li>
+        <li class="nav-item dropdown">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "https://www.shutterstock.com/image-vector/default-avatar-profile-icon-grey-600w-1545687101.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Become a butler", new_butler_path(), class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path(), class: "dropdown-item", data: {turbo_method: :delete} %>
+        </div>
+        </li>
+          <% else %>
+        <li class="login">
+          <%= link_to "Login", new_user_session_path(@user), class: "nav-btn" %>
+        </li>
+          <% end %>
+        </ul>
+            </div>
+      </div>
 </div>
