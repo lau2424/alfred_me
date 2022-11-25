@@ -11,14 +11,16 @@
             <li><%=@butler.address.capitalize%> <i class="fa-solid fa-location-dot"></i></li>
             <li><%=@butler.price%> <i class="fa-solid fa-euro-sign"></i></li>
           </ul>
-            <%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%>
+            <div class="button"><%= link_to "BOOK ME", new_butler_booking_path(@butler), class: "nav-btn"%></div>
         </div>
-        <div class="divdescription">
+    </div>
+    <div class="bottom-section">
+      <div class="divdescription">
         <p> <i class="fa-solid fa-quote-left"> </i> <%= @butler.description %> <i class="fa-solid fa-quote-right"> </i></p>
-        </div>
-        <div class="divreview">
+      </div>
+      <div class="divreview">
         REVIEWS
-        </div>
+      </div>
     </div>
   </div>
 </div>
