@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def index
+    @user = current_user
+    
+  end
+
   def new
     @booking = Booking.new
     @butler = Butler.find(params[:butler_id])

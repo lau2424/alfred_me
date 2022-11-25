@@ -1,0 +1,9 @@
+<h1>Your bookings</h1>
+
+<% @user.bookings.each do |item| %>
+<ul>
+ <li> You have booked <%= item.butler.first_name %> <%= item.butler.last_name %> from <%= item.start_date.strftime('%d-%m-%Y') %> to <%= item.end_date.strftime('%d-%m-%Y') %> </li>
+<% end  %>
+</ul>
+
+<%= link_to "BACK TO HOME", butlers_path %>
