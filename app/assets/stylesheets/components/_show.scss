@@ -26,6 +26,42 @@
   text-align: left;
   padding-left: 0;
 }
+
+.button{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .divtopleft ul{
+    text-align: center;
+  }
+
+  .divtopleft {
+    text-align: center;
+  }
+}
+
+.divtopright img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.divtopleft ul{
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+}
 .button{
   margin-top: 40px;
   display: flex;
@@ -47,6 +83,7 @@
     text-align: center;
   }
 }
+
 
 .divtopright img{
     width: 100%;
