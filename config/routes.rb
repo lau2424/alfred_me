@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :butlers do
     resources :reviewtables
-    resources :bookings
+    resources :bookings, except: [:index]
   end
+  resources :bookings, only: [:index]
 end
