@@ -14,13 +14,8 @@
   z-index: 1;
 }
 
-
-// .reduction {
-// // width: 50%;
-// }
-
 .noborder {
-  border: none
+  border: none;
 
 }
 .search-home {
@@ -39,7 +34,6 @@
     align-items: center;
   li {
     list-style: none;
-    // padding-right: 5px;
   }
   img {
     cursor: pointer;
@@ -52,9 +46,7 @@
 }
 
 .search input {
-  // margin-right: 20px;
   display: inline;
-
 }
 
 .nav-item {
